@@ -1,5 +1,5 @@
 # 1D_field_evolution.py
-# Simulates an oscillatory scalar field in 1+1 spacetime with a polynomial potential
+# Simulates an oscillatory scalar field in 1+1 (d=1) spacetime with a polynomial potential
 
 import numpy as np
 import numba, h5py, os
@@ -44,7 +44,7 @@ def animate_rho(frame, line, rplot):
 @numba.jit(nopython=True, parallel=True)
 def evolve(L, N, dt, nSteps, w, phi, phi_dot):
     '''
-    Computes the evolution of a scalar field in 1 + 1 (d = 1) spacetime with a polynomial potential and periodic boundary conditions 
+    Computes the evolution of a scalar field in 1+1 (d=1) spacetime with a polynomial potential and periodic boundary conditions
     using first order central difference schemes in both time and space.
 
     Parameter(s):
